@@ -1,0 +1,23 @@
+{
+  "name": "taobao",
+  "version": "1.0.0",
+  "description": "search",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KecanNi/taobao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KecanNi/taobao/issues"
+  },
+  "homepage": "https://github.com/KecanNi/taobao#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
