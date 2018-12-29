@@ -65,3 +65,38 @@ gulp.task('devServer', function () {
 //开发环境
 gulp.task('dev', gulp.series('devSass', 'devServer', 'watch'));
 
+/* -------------------------------------------------- */
+
+//压缩js
+gulp.task('bUglify', function () {
+    return gulp.src(['./src/scripts/*.js', '!./src/scripts/*.min.js'])
+        .pipe(uglify())
+        .pipe(gulp.dest('./bulid/scripts'))
+})
+//压缩html
+gulp.task('bHtmlmin', function () {
+    return gulp.src('./src/**/*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./bulid/'))
+})
+//压缩css
+gulp.task('bCss', function () {
+    return gulp.src('./src/css/*.css')
+        .pipe(gulp.dest('./bulid/css'))
+})
+//压缩图片
+gulp.task('bFont', function () {
+    return gulp.src('./src/fonts/*')
+        .pipe(gulp.dest('./bulid/fonts'))
+})
+//压缩图片
+gulp.task('bImg', function () {
+    return gulp.src('./src/images/*.jpg')
+        .pipe(gulp.dest('./bulid/images'))
+})
+//启服务
+gulp.task('bulidServerver', function () {
+    return serverFun('bulid')
+})
+//线上环境 即线上环境
+gulp.task('bulid', gulp.series('bUglify','bFont','bHtmlmin', 'bCss','bImg'))
