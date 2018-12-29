@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./fonts/iconfont.css">
     <link rel="stylesheet" href="./css/index.css">
-    <script src="./scripts//libs/flexiable.js"></script>
+    <script src="./scripts/flexiable.js"></script>
 </head>
 
 <body>
@@ -39,8 +39,7 @@
             </div>
         </main>
     </div>
-    <script src="./scripts/libs/bscroll.min.js"></script>
-    <script src="./scripts/libs//ajax.js"></script>
+    <script src="./scripts/ajax.js"></script>
     <script>
         var btn = document.getElementById('btn');
         var item = document.getElementsByClassName('main-item')[0];
@@ -51,26 +50,28 @@
                 type: 'get',
                 dataType: 'json',
                 success: function (data) {
-                   
+
                     a(data)
                 }
             })
         })
-        function a(data){
-            var src = ``;
-                    data.data.forEach(function (file) {
-                        src +=
-                            ` <li>
-                                    <img src="images/${file.img}" alt="">
-                                    <p class="title">${file.title}</p>
-                                    <p class="price"><i>￥</i>${file.price}</p>
-                             </li>`;
 
-                    })
-                    item.innerHTML = src;
-                    console.log(src)
+        function a(data) {
+            var src = ``;
+            data.data.forEach(function (file) {
+                src +=
+                    ` <li>
+                            <img src="images/${file.img}" alt="">
+                            <p class="title">${file.title}</p>
+                            <p class="price"><i>￥</i>${file.price}</p>
+                     </li>`;
+
+            })
+            item.innerHTML = src;
+            console.log(src)
         }
     </script>
+   
 </body>
 
 </html>
